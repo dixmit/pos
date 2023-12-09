@@ -10,5 +10,7 @@ class PosSession(models.Model):
     def _product_pricelist_item_fields(self):
         result = super()._product_pricelist_item_fields()
         result.append("split_invoice_partner_id")
+        result.append("split_base_pricelist_id")
         result.append("split_percentage")
+        result.append("split_base")
         return result

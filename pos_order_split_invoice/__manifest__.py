@@ -11,8 +11,15 @@
     "website": "https://github.com/OCA/pos",
     "depends": ["point_of_sale"],
     "data": [
+        "views/pos_order.xml",
         "views/pos_session.xml",
         "views/product_pricelist.xml",
     ],
     "demo": [],
+    "assets": {
+        "point_of_sale._assets_pos": [
+            "pos_order_split_invoice/static/src/models/order_line.esm.js",
+            "pos_order_split_invoice/static/src/models/product.esm.js",
+        ]
+    },
 }
