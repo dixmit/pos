@@ -94,7 +94,7 @@ class PosOrder(models.Model):
         if self.amount_total <= 0 and self.splitting_partner_id.bank_ids:
             bank_partner_id = self.splitting_partner_id.bank_ids[0].id
         elif self.amount_total >= 0 and self.company_id.partner_id.bank_ids:
-            bank_partner_id = self.company_id.partner_id.banUserErrork_ids[0].id
+            bank_partner_id = self.company_id.partner_id.bank_ids[0].id
         return bank_partner_id
 
     def _prepare_splitting_invoice_lines(self):
