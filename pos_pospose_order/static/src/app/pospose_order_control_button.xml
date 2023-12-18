@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_pospose_order.PosposeOrderButton">
+        <button
+            class="control-button btn btn-light rounded-0 fw-bolder"
+            t-on-click="() => this.click()"
+        >
+            <i
+                class="fa fa-list me-1"
+                role="img"
+                aria-label="Pospose"
+                title="Pospose"
+            />
+            Pospose
+        </button>
+    </t>
+
+</templates>

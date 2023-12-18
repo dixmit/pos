@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_pospose_order.PosposeOrderScreen">
+        <div>
+            <div class="row">
+                <div class="col-1">
+                    <button
+                        class="btn btn-primary"
+                        t-on-click="onClickNewOrder"
+                    >Add new Order</button>
+                </div>
+                <div class="col-1">
+                    <button
+                        class="btn btn-primary"
+                        t-on-click="onClickClose"
+                    >Close</button>
+                </div>
+            </div>
+            <t t-foreach="orders" t-as="order" t-key="order.cid">
+                <PosposeOrderItem order="order" />
+            </t>
+        </div>
+    </t>
+    <t t-name="pos_pospose_order.PosposeOrderItem">
+        <div class="row" t-attf-style="{{style}}">
+            <div class="col-1" t-out="props.order.name" />
+            <div
+                class="col-1"
+                t-out="pos.env.utils.formatCurrency(props.order.get_total_with_tax())"
+            />
+            <div class="col-1">
+                <button
+                    class="btn btn-primary"
+                    t-on-click="onClickSelect"
+                >Select Order</button>
+            </div>
+            <div class="col-1">
+                <button
+                    class="btn btn-danger"
+                    t-on-click="onClickRemove"
+                >Remove Order</button>
+            </div>
+        </div>
+    </t>
+
+</templates>
