@@ -11,7 +11,7 @@ class PosOrder(models.Model):
     _inherit = "pos.order"
 
     splitting_partner_id = fields.Many2one("res.partner", readonly=True)
-    splitting_move_id = fields.Many2one("account.move", reaodonly=True)
+    splitting_move_id = fields.Many2one("account.move", readonly=True)
 
     def _process_saved_order(self, draft):
         self.splitting_partner_id = (
