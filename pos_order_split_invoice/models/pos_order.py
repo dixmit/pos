@@ -14,10 +14,6 @@ class PosOrder(models.Model):
     splitting_move_id = fields.Many2one("account.move", reaodonly=True)
 
     def _process_saved_order(self, draft):
-        print(
-            any(line.split_invoice_amount for line in self.lines),
-            self.pricelist_id.split_invoice_partner_id,
-        )
         self.splitting_partner_id = (
             any(line.split_invoice_amount for line in self.lines)
             and self.pricelist_id.split_invoice_partner_id
@@ -45,6 +41,7 @@ class PosOrder(models.Model):
             self._get_html_link(),
         )
         new_move.message_post(body=message)
+        new_move.action_post()
         return new_move
 
     def _prepare_splitting_invoice_vals(self):
