@@ -14,6 +14,9 @@ patch(Orderline.prototype, {
         return json;
     },
     split_invoice_amount(pricelist, quantity, price_extra = 0, recurring = false) {
+        if (pricelist === undefined) {
+            return 0;
+        }
         const date = DateTime.now();
         const rules = (
             this.product.applicablePricelistItems[pricelist.id] || []
