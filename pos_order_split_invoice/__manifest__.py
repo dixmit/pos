@@ -11,6 +11,7 @@
     "website": "https://github.com/OCA/pos",
     "depends": ["point_of_sale"],
     "data": [
+        "views/account_move.xml",
         "views/pos_order.xml",
         "views/pos_session.xml",
         "views/product_pricelist.xml",
