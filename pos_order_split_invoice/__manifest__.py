@@ -20,6 +20,9 @@
         "point_of_sale._assets_pos": [
             "pos_order_split_invoice/static/src/models/order_line.esm.js",
             "pos_order_split_invoice/static/src/models/product.esm.js",
+            "pos_order_split_invoice/static/src/generic_components/product_card.esm.js",
+            "pos_order_split_invoice/static/src/generic_components/product_card.xml",
+            "pos_order_split_invoice/static/src/screens/product_screen/product_list.xml",
         ]
     },
 }
