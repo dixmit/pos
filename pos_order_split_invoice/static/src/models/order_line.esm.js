@@ -26,16 +26,23 @@ patch(Orderline.prototype, {
                 !check_rule.min_quantity || quantity >= check_rule.min_quantity
         );
         if (rule && rule.compute_price === "split") {
-            return (
-                (this.product.get_price(
-                    rule.split_base_pricelist_id,
-                    quantity,
-                    price_extra,
-                    recurring
-                ) *
-                    rule.split_percentage) /
-                100
-            );
+            let price = this.product.lst_price + (price_extra || 0);
+            if (rule.split_base === "pricelist") {
+                const base_pricelist = this.pos.pricelists.find(
+                    (pricelist) => pricelist.id === rule.split_base_pricelist_id[0]
+                );
+                if (base_pricelist) {
+                    price = this.product.get_price(
+                        base_pricelist,
+                        quantity,
+                        price_extra,
+                        recurring
+                    );
+                }
+            } else if (rule.base === "standard_price") {
+                price = this.standard_price;
+            }
+            return (price * rule.split_percentage) / 100;
         }
         return 0;
     },

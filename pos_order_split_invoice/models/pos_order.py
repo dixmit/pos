@@ -76,6 +76,8 @@ class PosOrder(models.Model):
             "invoice_line_ids": self._prepare_splitting_invoice_lines(),
             "invoice_payment_term_id": self.splitting_partner_id.property_payment_term_id.id
             or False,
+            "splitting_partner_id": self.partner_id.id,
+            "splitting_order_id": self.id,
         }
         if self.refunded_order_ids.splitting_move_id:
             vals["ref"] = _(
