@@ -19,6 +19,7 @@
     "demo": [],
     "assets": {
         "point_of_sale._assets_pos": [
+            "pos_order_split_invoice/static/src/models/order.esm.js",
             "pos_order_split_invoice/static/src/models/order_line.esm.js",
             "pos_order_split_invoice/static/src/models/product.esm.js",
             "pos_order_split_invoice/static/src/generic_components/product_card.esm.js",

@@ -20,6 +20,8 @@ class PosOrder(models.Model):
         )
         result = super()._process_saved_order(draft)
         if not draft and self.splitting_partner_id and not self.splitting_move_id:
+            if not self.partner_id:
+                raise UserError(_("Partner is required when splitting an order"))
             self.splitting_move_id = self.with_company(
                 self.company_id.id
             )._create_splitting_invoice(
