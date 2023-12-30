@@ -4,4 +4,7 @@ The first one will be payed inside the PoS Order, and the second one
 will be payed after by this secondary partner.
 
 This approach might appear in several cases, mainly on co-payments
-(Insurances, Pharmacies...)
+(Medical centers, Pharmacies...)
+
+The pricelists created shouldn't be used on Sale Orders, as that
+might be confusing.
