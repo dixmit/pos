@@ -115,7 +115,6 @@ class PosOrder(models.Model):
                     {
                         "product_id": line_values["product"].id,
                         "quantity": line_values["quantity"],
-                        "discount": line_values["discount"],
                         "price_unit": line_values["price_unit"],
                         "name": line_values["name"],
                         "tax_ids": [(6, 0, line_values["taxes"].ids)],
